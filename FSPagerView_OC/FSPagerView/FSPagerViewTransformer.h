@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, FSPagerViewTransformerType) {
     FSPagerViewTransformerTypeFerrisWheel,
     FSPagerViewTransformerTypeInvertedFerrisWheel,
     FSPagerViewTransformerTypeCubic,
+    FSPagerViewTransformerTypeHorizontalOnlyAlpha,
 };
 
 @interface FSPagerViewTransformer : NSObject

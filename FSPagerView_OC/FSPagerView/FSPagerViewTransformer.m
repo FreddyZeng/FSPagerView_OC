@@ -292,7 +292,15 @@
             }
             break;
         }
-            
+        case FSPagerViewTransformerTypeHorizontalOnlyAlpha:
+        {
+            if (scrollDirection != FSPagerViewScrollDirectionHorizontal) {
+                return;
+            }
+            CGFloat alpha = (self.minimumAlpha + (1-fabs(position))*(1-self.minimumAlpha));
+            attributes.alpha = alpha;
+            break;
+        }
         default:
             break;
     }
@@ -357,7 +365,11 @@
             return 0;
         }
             break;
-            
+        case FSPagerViewTransformerTypeHorizontalOnlyAlpha:
+        {
+            return pagerView.interitemSpacing;
+        }
+            break;
         default:
             break;
     }

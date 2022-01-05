@@ -17,12 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    FSPagerView *pagerView = [[FSPagerView alloc] initWithFrame:CGRectMake(0, 100, 400, 100)];
+    FSPagerView *pagerView = [[FSPagerView alloc] initWithFrame:CGRectMake(0, 100, 320, 132)];
     pagerView.delegate = self;
     pagerView.dataSource = self;
-    pagerView.isInfinite = YES;
-    pagerView.itemSize = CGSizeMake(400, 100);
+    pagerView.isInfinite = NO;
+    pagerView.itemSize = CGSizeMake(220, 132);
+    pagerView.interitemSpacing = 12;
     [pagerView registerClass:NSClassFromString(@"FSPagerViewCell") forCellWithReuseIdentifier:@"Cell"];
+    
+    FSPagerViewTransformer *transformer = [[FSPagerViewTransformer alloc] initWithType:FSPagerViewTransformerTypeHorizontalOnlyAlpha];
+    pagerView.transformer = transformer;
     [self.view addSubview:pagerView];
 }
 
